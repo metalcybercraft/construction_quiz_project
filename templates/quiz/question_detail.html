@@ -9,9 +9,9 @@
         <li>{{ question.option3 }}</li>
         <li>{{ question.option4 }}</li>
     </ol>
-    <p><strong>Правильный ответ:</strong> {{ question.correct_option }}</p>
+    <p><strong>Правильый ответ:</strong> {{ question.correct_option }}</p>
     <p><strong>Пояснение:</strong> {{ question.explanation }}</p>
 </div>
-<a href="{% url 'quiz:question_edit' question.id %}" class="btn btn-warning">Редактировать</a>
+<a href="{% url 'quiz:question_edit' question.id %}" class="btn btn-warning">Редактирвать</a>
 <a href="{% url 'quiz:question_list' %}" class="btn">Назад к списку</a>
 {% endblock %}
