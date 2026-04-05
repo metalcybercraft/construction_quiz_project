@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Результаты теста</h2>
+<div class="progress-bar">
+    <div class="progress" style="width: {{ score_percent }}%;">{{ score_percent }}%</div>
+</div>
+<p>Правильных ответов: {{ correct_count }} из {{ total }}</p>
+{% for r in results %}
+    <div class="card">
+        <p><strong>{{ forloop.counter }}. {{ r.question.question_text }}</strong></p>
+        <p>Ваш ответ: 
+            {% if r.user_answer == 1 %}{{ r.question.option1 }}
+            {% elif r.user_answer == 2 %}{{ r.question.option2 }}
+            {% elif r.user_answer == 3 %}{{ r.question.option3 }}
+            {% elif r.user_answer == 4 %}{{ r.question.option4 }}
+            {% else %}не выбран{% endif %}
+        </p>
+        <p>Результат: {% if r.is_correct %}Правильно{% else %}Неправильно{% endif %}</p>
+        <p>Пояснение: {{ r.explanation }}</p>
+    </div>
+{% endfor %}
+<a href="{% url 'quiz:quiz_start' %}" class="btn btn-warning">Пройти ещё раз</a>
+<a href="{% url 'quiz:question_list' %}" class="btn">На главную</a>
+{% endblock %}

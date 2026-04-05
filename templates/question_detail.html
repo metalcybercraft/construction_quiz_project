@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{{ question.question_text }}</h2>
+<div class="card">
+    <p><strong>Варианты:</strong></p>
+    <ol>
+        <li>{{ question.option1 }}</li>
+        <li>{{ question.option2 }}</li>
+        <li>{{ question.option3 }}</li>
+        <li>{{ question.option4 }}</li>
+    </ol>
+    <p><strong>Правильный ответ:</strong> {{ question.correct_option }}</p>
+    <p><strong>Пояснение:</strong> {{ question.explanation }}</p>
+</div>
+<a href="{% url 'quiz:question_edit' question.id %}" class="btn btn-warning">Редактировать</a>
+<a href="{% url 'quiz:question_list' %}" class="btn">Назад к списку</a>
+{% endblock %}

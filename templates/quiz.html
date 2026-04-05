@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Тест из 5 случайных вопросов</h2>
+<form method="post" action="{% url 'quiz:quiz_result' %}">
+    {% csrf_token %}
+    {% for q in questions %}
+        <div class="card">
+            <p><strong>{{ forloop.counter }}. {{ q.question_text }}</strong></p>
+            <label><input type="radio" name="question_{{ q.id }}" value="1" required> {{ q.option1 }}</label><br>
+            <label><input type="radio" name="question_{{ q.id }}" value="2"> {{ q.option2 }}</label><br>
+            <label><input type="radio" name="question_{{ q.id }}" value="3"> {{ q.option3 }}</label><br>
+            <label><input type="radio" name="question_{{ q.id }}" value="4"> {{ q.option4 }}</label><br>
+        </div>
+    {% endfor %}
+    <button type="submit" class="btn">Проверить ответы</button>
+</form>
+{% endblock %}

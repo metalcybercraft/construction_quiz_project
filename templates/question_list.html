@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Список вопросов</h2>
+<form method="get">
+    {{ form.as_p }}
+    <button type="submit" class="btn">Найти</button>
+    <a href="{% url 'quiz:question_create' %}" class="btn btn-warning">Добавить вопрос</a>
+</form>
+{% if query %}
+    <p>Результаты поиска: "{{ query }}"</p>
+{% endif %}
+{% for q in questions %}
+    <div class="card">
+        <h3>{{ q.question_text }}</h3>
+        <a href="{% url 'quiz:question_detail' q.id %}" class="btn">Подробнее</a>
+        <a href="{% url 'quiz:question_edit' q.id %}" class="btn btn-warning">Редактировать</a>
+    </div>
+{% empty %}
+    <p>Вопросов не найдено.</p>
+{% endfor %}
+{% endblock %}

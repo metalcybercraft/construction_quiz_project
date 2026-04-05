@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Строительный тест</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Тестирование знаний строительных терминов</h1>
+            <nav>
+                <a href="{% url 'quiz:question_list' %}">Вопросы</a> |
+                <a href="{% url 'quiz:quiz_start' %}">Пройти тест</a> |
+                <a href="{% url 'quiz:about' %}">О проекте</a>
+            </nav>
+        </header>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+        <footer>
+            <p>© 2025 Учебный проект</p>
+        </footer>
+    </div>
+</body>
+</html>

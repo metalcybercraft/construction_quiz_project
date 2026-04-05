@@ -1,0 +1,85 @@
+body {
+    background-color: #e9ecef;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+header {
+    border-bottom: 1px solid #dee2e6;
+    margin-bottom: 20px;
+}
+h1 {
+    color: #343a40;
+}
+nav a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #007bff;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+.card {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+.btn-warning {
+    background-color: #ffc107;
+    color: #212529;
+}
+.btn-secondary {
+    background-color: #6c757d;
+}
+.btn:hover {
+    opacity: 0.9;
+}
+form input, form textarea, form select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.errorlist {
+    color: #dc3545;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px;
+}
+.progress-bar {
+    background-color: #e9ecef;
+    border-radius: 5px;
+    height: 20px;
+    margin: 15px 0;
+}
+.progress {
+    background-color: #28a745;
+    height: 20px;
+    border-radius: 5px;
+    width: 0%;
+    text-align: center;
+    color: white;
+    line-height: 20px;
+}
