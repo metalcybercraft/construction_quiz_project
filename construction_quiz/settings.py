@@ -1,11 +1,13 @@
 """Настройки проекта construction_quiz для Django."""
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = 'django-insecure-8^z7wq3&6v9@k!p1l#m2n3b4v5c6x7z8a9s0d1f2g3h4j5k6l7' #бесполезен, т.к. Дебаг=Тру
-DEBUG = True
-ALLOWED_HOSTS = []
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'  
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
